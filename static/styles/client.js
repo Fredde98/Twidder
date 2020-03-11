@@ -128,6 +128,7 @@ function create_web_socket(token)
     // ws = new WebSocket("wss://" + document.domain + ":5000/create_socket");
    // ws = new WebSocket("ws://" + location.host + "/create_socket");
     //ws = new WebSocket("wss://" + location.host + "/create_socket");
+    console.log("wss://" + document.domain + location.port + "/create_socket");
     ws = new WebSocket("wss://" + document.domain + location.port + "/create_socket");
     ws = new WebSocket("ws://" + document.domain + location.port + "/create_socket");
 
