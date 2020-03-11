@@ -126,7 +126,8 @@ function create_web_socket(token)
 
     console.log("I create");
     // ws = new WebSocket("wss://" + document.domain + ":5000/create_socket");
-    ws = new WebSocket("ws://" + location.host + "/create_socket");  
+    ws = new WebSocket("ws://" + location.host + "/create_socket");
+    ws = new WebSocket("wss://" + location.host + "/create_socket");  
 
     ws.onmessage = function (evt) {
 	var msg = evt.data;
@@ -254,12 +255,15 @@ async function load_wall(email = null)
     }
 
     console.log(res);
-    var data = res["messages"];
-    console.log(data);
-    wall.innerText = "";
-    for(i = 0; i < data.length; i++)
+    if(res["success"])
     {
-	wall.innerText += data[i][0] + " wrote: " + data[i][2] + "\n";
+	var data = res["messages"];
+	console.log(data);
+	wall.innerText = "";
+	for(i = 0; i < data.length; i++)
+	{
+	    wall.innerText += data[i][0] + " wrote: " + data[i][2] + "\n";
+	}
     }
 }
 
