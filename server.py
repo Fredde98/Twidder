@@ -18,20 +18,20 @@ count = 0
 
 def updateStats(email):
     try:
-    response = database_helper.get_messages(email)
-    response = response.get_json()
-    print(response)
-    response = response["messages"]
-    message_count = len(response)
-    loggedCount = len(loggedInUsers)
-    regCount = database_helper.get_user_count()
-    
-    message = json.dumps({"message_count" : message_count,
-                          "loggedInCount" : loggedCount,
-                          "registredCount" : regCount})
-    user = loggedInConnections[email]
-    ws = user[2]
-    ws.send(message);
+        response = database_helper.get_messages(email)
+        response = response.get_json()
+        print(response)
+        response = response["messages"]
+        message_count = len(response)
+        loggedCount = len(loggedInUsers)
+        regCount = database_helper.get_user_count()
+        
+        message = json.dumps({"message_count" : message_count,
+                              "loggedInCount" : loggedCount,
+                              "registredCount" : regCount})
+        user = loggedInConnections[email]
+        ws = user[2]
+        ws.send(message);
     except KeyError:
         print("I updateStats: Keyerror, förmodligen websocket som saknas")
 
