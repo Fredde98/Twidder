@@ -17,6 +17,7 @@ loggedInConnections = {  }
 count = 0
 
 def updateStats(email):
+    try:
     response = database_helper.get_messages(email)
     response = response.get_json()
     print(response)
@@ -31,6 +32,8 @@ def updateStats(email):
     user = loggedInConnections[email]
     ws = user[2]
     ws.send(message);
+    except KeyError:
+        print("I updateStats: Keyerror, förmodligen websocket som saknas")
 
 def log_out(user):
     try:

@@ -125,7 +125,7 @@ function create_web_socket(token)
 {
 
     console.log("I create");
-    ws = new WebSocket("ws://" + document.domain + ":5000/create_socket");  
+    ws = new WebSocket("wss://" + document.domain + ":5000/create_socket");  
 
     ws.onmessage = function (evt) {
 	var msg = evt.data;
