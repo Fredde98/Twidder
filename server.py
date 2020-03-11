@@ -147,6 +147,7 @@ def get_user_data_by_email(email):
 def get_user_messages_by_token():
     try:
         header = request.headers
+        print(header)
         token = header["token"]
         email = loggedInUsers[token]
 
