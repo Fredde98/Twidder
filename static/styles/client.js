@@ -202,6 +202,7 @@ async function show_my_home()
     var token = sessionStorage.getItem("token");
     let header = [["token", token]];
     console.log(header);
+    console.log(header[[1]]);
     const  res = await http_request("GET", "get_user_data_by_token", null, header);
     console.log(res);
     
