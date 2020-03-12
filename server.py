@@ -226,7 +226,7 @@ def api():
         return ""
 
 if __name__ == '__main__':
-    http_server = WSGIServer(('', int(os.environ.get("PORT", 5000))), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0', int(os.environ.get("PORT", 5000))), app, handler_class=WebSocketHandler)
     print("hej\n\n")
     print(int(os.environ.get("PORT", 5000)))
     print("hej\n\n")
