@@ -221,4 +221,5 @@ def api():
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(os.environ.get("PORT", 5000))), app, handler_class=WebSocketHandler)
+    print(int(os.environ.get("PORT", 5000)))
     http_server.serve_forever()
