@@ -17,6 +17,9 @@ loggedInConnections = {  }
 count = 0
 
 def updateStats(email):
+    print("hej\n\n")
+    print(int(os.environ.get("PORT", 5000)))
+    print("hej\n\n")
     try:
         response = database_helper.get_messages(email)
         response = response.get_json()
@@ -49,6 +52,9 @@ def render_client():
 
 @app.route('/sign_in', methods=[ 'POST'])
 def login():
+    print("hej\n\n")
+    print(int(os.environ.get("PORT", 5000)))
+    print("hej\n\n")
     content = request.get_json()
     username = content["username"]
     password = content["password"]
