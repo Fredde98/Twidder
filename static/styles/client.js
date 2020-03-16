@@ -124,16 +124,16 @@ function validatePassword(password1, password2) {
 function create_web_socket(token)
 {
 
-    console.log("I create");
-     ws = new WebSocket("ws://" + document.domain + ":80/create_socket");
-    ws = new WebSocket("ws://" + location.host + "/create_socket");
-    ws = new WebSocket("wss://" + location.host + "/create_socket");
-    console.log(location);
-    console.log(location.host);
-    console.log(location.port);
-    console.log("wss://" + document.domain + location.port + "/create_socket");
-    ws = new WebSocket("wss://" + document.domain + location.port + "/create_socket");
-    ws = new WebSocket("ws://" + document.domain + location.port + "/create_socket");
+    // console.log("I create");
+    //  ws = new WebSocket("ws://" + document.domain + ":80/create_socket");
+    // ws = new WebSocket("ws://" + location.host + "/create_socket");
+    // ws = new WebSocket("wss://" + location.host + "/create_socket");
+    // console.log(location);
+    // console.log(location.host);
+    // console.log(location.port);
+    // console.log("wss://" + document.domain + location.port + "/create_socket");
+    // ws = new WebSocket("wss://" + document.domain + location.port + "/create_socket");
+    // ws = new WebSocket("ws://" + document.domain + location.port + "/create_socket");
 
 
     ws.onmessage = function (evt) {
